@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>OMDb API</title>
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+      <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
+
+      <style type="text/css">
+        #results li {
+          cursor: grab;
+        }
+
+        #results li:active {
+          cursor: grabbing;
+        }
+
+        #results li.ghost {
+          filter: grayscale(1);
+          opacity: 0.5;
+        }
+
+        #preview, #editor {
+          margin: 20px auto;
+          max-width: 600px;
+        }
+
+        #preview {
+          min-height: 100px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 6px 12px;
+          text-align: left;
+        }
+
+        #preview img {
+          max-width: 100%;
+        }
+
+      </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="my-5">
+        <select id="estado" name="estado">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>
+        </select>
+      </div>
+
+      <div class="my-5">
+        <textarea class="form-control" id="editor" rows="4"></textarea>
+        <div id="preview"></div>
+
+      </div>
+
+
+      <div class="row justify-content-md-center">
+        <form class="form-inline mt-3" id="search-form">
+          <input type="text" class="form-control" placeholder="Find movie" id="search-input">
+          <input type="submit" class="btn btn-primary ml-2">
+        </form>
+      </div>
+
+      <div class="row justify-content-md-center">
+        <ul id="results" class="list-inline mt-3"></ul>
+      </div>
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
